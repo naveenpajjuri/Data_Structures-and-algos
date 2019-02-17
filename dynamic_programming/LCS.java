@@ -15,10 +15,10 @@ public class LCS {
 
 		String s1 = "AGGTAB"; 
         String s2 = "GXTXAYB"; 
-        char[] X=s1.toCharArray(); 
-        char[] Y=s2.toCharArray(); 
-        int Xlen=X.length;
-        int Ylen=Y.length;
+        char[] X = s1.toCharArray(); 
+        char[] Y = s2.toCharArray(); 
+        int Xlen = X.length;
+        int Ylen = Y.length;
         System.out.println(lcsLength(X,Y,Xlen,Ylen));
 	}
 }

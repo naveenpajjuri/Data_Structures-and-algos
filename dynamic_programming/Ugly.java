@@ -12,7 +12,6 @@ public class Ugly {
 		if (memoArray[n-1] != -1) {
 			return memoArray[n-1];
 		}
-		//Math.min(ugly(n-1)*2, Math.min(ugly(n-1)*3, Math.min(ugly(n-1)*5)))
 		
 		int i = n;
 		int min = Integer.MAX_VALUE;
@@ -33,8 +32,19 @@ public class Ugly {
 					min = ugly(i-1)*5;
 				}
 			}
+			if (ugly(i-1)*7 > ugly(n-1)) {
+				if (ugly(i-1)*7 < min) {
+					min = ugly(i-1)*7;
+				}
+			}
+			if (ugly(i-1)*11 > ugly(n-1)) {
+				if (ugly(i-1)*11 < min) {
+					min = ugly(i-1)*11;
+				}
+			}
 			i--;
 		}
+		System.out.println(n);
 		memoArray[n-1] = min;
 		return min;
 	}
@@ -43,6 +53,6 @@ public class Ugly {
 		for (int i =0;i < 1000; i++) {
 			memoArray[i] = -1;
 		}
-		System.out.println(ugly(150));
+		System.out.println(ugly(300));
   	} 
 }

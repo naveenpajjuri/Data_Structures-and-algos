@@ -1,6 +1,9 @@
 import java.util.LinkedList;
 
-public class AdjacenyList {
+/**
+ * Created by Naveen Pajjuri on 19/05/19.
+ */
+public class AdjacencyList  {
 
 	static class Graph {
 		public int numberOfVertices;
@@ -18,11 +21,12 @@ public class AdjacenyList {
 			g.linkArray[y].add(x);
 		}
 		static void printGraph(Graph g){
-			for (int i =0; i < g.linkArray.length ; i++) {
-				LinkedList l = g.linkArray[i];
-				for (int k = 0; k < l.size(); k ++) {
-					
+			for (int i = 0 ; i < g.linkArray.length; i++) {
+				System.out.print("vertex  "+ i + " and edges are");
+				for (int j = 0; j < g.linkArray[i].size(); j++) {
+					System.out.print(" : "+ g.linkArray[i].get(j));
 				}
+				System.out.println(" ");
 			}
 		}
 	}
@@ -42,7 +46,7 @@ public class AdjacenyList {
 
 		// print the adjacency list representation of
 		// the above graph
-		printGraph(graph);
+		graph.printGraph(graph);
 
 		System.out.println("end -- "+ graph.linkArray.length);
 	}

@@ -19,6 +19,10 @@ public class Graph {
 		adjList[y].add(x);
 	}
 
+	public void addDirectedEdge(int x, int y) {
+		adjList[x].add(y);
+	}
+
 	public void populateGraph() {
 		addEdge(0, 1);
 		addEdge(0, 2);
@@ -26,6 +30,28 @@ public class Graph {
 		addEdge(2, 0);
 		addEdge(2, 3);
 		addEdge(3, 3);
+	}
+
+	public void populateDirectedGraph() {
+		addDirectedEdge(5, 2);
+		addDirectedEdge(5, 0);
+		addDirectedEdge(4, 0);
+		addDirectedEdge(4, 1);
+		addDirectedEdge(2, 3);
+		addDirectedEdge(2, 1);
+		//addDirectedEdge(1, 2);
+		//addDirectedEdge(2, 0);
+		//addDirectedEdge(2, 3);
+		//addDirectedEdge(0, 3);
+		//addDirectedEdge(3, 3);
+	}
+
+	public void createGraph() {
+		this.populateGraph();
+	}
+
+	public void createDirectedGraph() {
+		this.populateDirectedGraph();
 	}
 
 	public void printGraph() {

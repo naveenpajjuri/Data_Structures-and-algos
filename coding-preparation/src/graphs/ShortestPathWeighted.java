@@ -1,3 +1,5 @@
+package graphs;
+
 /**
  * Created by Naveen Pajjuri on 21/05/19.
  */

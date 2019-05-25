@@ -1,4 +1,4 @@
-package dynamic_programming;
+package dynamic_programming.knapsack_0_1;
 
 /**
  * Created by Naveen Pajjuri on 23/05/19.

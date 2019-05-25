@@ -1,4 +1,4 @@
-package dynamic_programming;
+package dynamic_programming.knapsack_0_1;
 
 /**
  * Created by Naveen Pajjuri on 23/05/19.
@@ -19,6 +19,23 @@ public class EqualSum {
 		for (int i = 0; i< num.length; i++) {
 			sum = sum + num[i];
 		}
+
+		if (sum % 2 != 0)
+			return false;
+		sum = sum/2;
+		if (sumPartition(num,sum,0) || sumPartition(num,sum,1))
+			return true;
+
 		return false;
+	}
+
+	private boolean sumPartition(int[] num, int sum, int i) {
+		if (i >= num.length || sum < 0)
+			return false;
+
+		if (sum == num[i])
+			return true;
+
+		return sumPartition(num,sum-num[i],i+1) || sumPartition(num,sum,i+1);
 	}
 }
